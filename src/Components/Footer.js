@@ -7,7 +7,7 @@ const Footer = (props) => {
     return(
         <div> 
             <h4>Footer STARTS here </h4> 
-            <span>{copyright}{media}{version}</span>
+            <span>{copyright}   {media}  {version}</span>
             <h4>Footer ENDS here </h4>    
         </div>
     );
