@@ -8,6 +8,7 @@ const Header = (props) => {
     // const [ dates, setDates ] = useState([])
 
     return(
+      <StyledHeader>
         <div className='header container'> 
             <h4>Header STARTS here {data.date}</h4>
         <form onSubmit={submit}>
@@ -16,6 +17,7 @@ const Header = (props) => {
         </form>
             <h4>Header ENDS here</h4>
         </div>
+      </StyledHeader>
     );
 };
 

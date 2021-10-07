@@ -38,7 +38,7 @@ function App() {
     .then(res => {
       console.log(res)
      setData(res.data)
-     setDate(newDate)  //
+     setDate(newDate) 
     })
     .catch(err => {
       console.error(err)
@@ -53,7 +53,7 @@ function App() {
   return (
     <div className="App">
       <Header data={data} date={date} submit={submit} change={onChange}/>     {/* pass in props = date , media_type   onSubmit */}
-      <Article  img={data.url} title={data.title}/>    {/* pass in props => img = data.url  ,  title  */}
+      <Article img={data.url} title={data.title}/>    {/* pass in props => img = data.url  ,  title  */}
       <Explanation explanation={data.explanation} />   {/* pass in props => explanation */}
       <Footer copyright={data.copyright} version={data.service_version} media={data.media_type}/>  {/* pass in props => copyright , service_version , media_type */}
       <p> 
