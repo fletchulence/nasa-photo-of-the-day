@@ -1,22 +1,33 @@
 import React, { useState, useEffect } from 'react';
 
 // css styles
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const kf = keyframes `
+  100%{
+    opacity: 1;
+    transform: scale(2);
+  }
+`
 
 const StyledHeader = styled.div`
   .container{
     display: flex;
-    flex-flow: column wrap;
-    justify-content: flex-end;
-    border: 1px solid ${pr => pr.theme.black};
-    margin: 2%;
-    width: 100%;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin: 0;
 
     h4{
       color: red;
-      font-size: 80pt;
+      font-size: 60pt;
+      margin: 0;
     }
   }
+  form{
+    display: flex;
+    align-self: center;
+  }
+
 
 `
 
@@ -32,7 +43,7 @@ const Header = (props) => {
         <div className='header container'> 
             <h4>{/* Header STARTS here */} {data.date}</h4>
         <form onSubmit={submit}>
-             <input onChange={change} type='date' max={date}/> 
+             <input className='calendar' onChange={change} type='date' max={date}/> 
              <input type='submit' value='date find'/>
         </form>
             <h4>{/* Header ENDS here */}</h4>

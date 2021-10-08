@@ -4,5 +4,5 @@ export default {
     grey: '#f2f2f2',
     black: 'black',
     // white: 'white',
-    breakpointMobile: '(max-width: 550px)'
+    // breakpointMobile: '(max-width: 550px)'
 }

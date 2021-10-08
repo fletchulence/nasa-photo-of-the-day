@@ -20,7 +20,7 @@ function App() {
   const [ date, setDate ] = useState(newDate)
   const [ show, setShow ] = useState(false)
 
-  useEffect(() => {  //? auto submit
+  useEffect(() => {  // ? auto submit
     function getData() {
       axios.get(`${BASE_URL}?api_key=${API_KEY}`)
       .then(res => {
@@ -36,7 +36,7 @@ function App() {
 
   const submit = evt =>{
     evt.preventDefault()
-    axios.get(`${BASE_URL}?api_key=DEMO_KEY&date=${date}`)
+    axios.get(`${BASE_URL}?api_key=${API_KEY}&date=${date}`)
     .then(res => {
       console.log(res)
      setData(res.data)
@@ -63,10 +63,7 @@ function App() {
         {show ?  <Explanation explanation={data.explanation} /> : null }
        {/* pass in props => explanation */}
       <Footer copyright={data.copyright} version={data.service_version} media={data.media_type}/>  {/* pass in props => copyright , service_version , media_type */}
-      <p> 
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun <span role="img" aria-label='go!'>🚀</span>!
-      </p>
+      
     </div>
   );
 }
