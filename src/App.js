@@ -13,10 +13,12 @@ const newDate = new Date().toISOString().slice(0, 10)
 console.log(new Date().getDate())
 //this will update on the day of use
 
+
 function App() {
 
   const [ data, setData ] = useState([])
   const [ date, setDate ] = useState(newDate)
+  const [ show, setShow ] = useState(false)
 
   useEffect(() => {  //? auto submit
     function getData() {
@@ -50,11 +52,16 @@ function App() {
     setDate(evt.target.value)
   }
 
+  function buttonClick(evt){
+    setShow(true)
+  }
+
   return (
     <div className="App">
       <Header data={data} date={date} submit={submit} change={onChange}/>     {/* pass in props = date , media_type   onSubmit */}
-      <Article img={data.url} title={data.title}/>    {/* pass in props => img = data.url  ,  title  */}
-      <Explanation explanation={data.explanation} />   {/* pass in props => explanation */}
+      <Article onClick={buttonClick} img={data.url} title={data.title}/>    {/* pass in props => img = data.url  ,  title  */}
+        {show ?  <Explanation explanation={data.explanation} /> : null }
+       {/* pass in props => explanation */}
       <Footer copyright={data.copyright} version={data.service_version} media={data.media_type}/>  {/* pass in props => copyright , service_version , media_type */}
       <p> 
         Read through the instructions in the README.md file to build your NASA

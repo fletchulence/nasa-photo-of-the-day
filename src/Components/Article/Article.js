@@ -1,15 +1,26 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const StyledArticle = styled.div`
+    h1 {
+        color: ${pr => pr.theme.white};
+        font-size: 40pt;
+    }
+
+`
+
+// const Stye
 
 function Article(props) {
-    const { img, title } = props;
+    const { img, title, onClick } = props;
 
     return(
-        <div> 
-            <h4>Article STARTS here</h4>
-            <img src={img} href={img}/>
+        <StyledArticle>
+            <div className='container' style={{backgroundImage: `url(${img})`}}> 
                 <h1> {title} </h1>
-            <h4>Article ENDS here</h4>
-        </div>
+                <button onClick={() => onClick()}>Learn More</button>
+            </div>
+        </StyledArticle>
     );
 };
 

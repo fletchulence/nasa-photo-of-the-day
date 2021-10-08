@@ -18,6 +18,12 @@ code {
   display: none;
 }
 
-.show{
+.show {
   display: block;
+}
+
+.container{
+  display: flex;
+  width: 90%;
+  justify-content: center;
 }
