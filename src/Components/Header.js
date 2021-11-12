@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 // css styles
-import styled, { keyframes } from 'styled-components';
+import styled/*  { keyframes } */ from 'styled-components';
 
-const kf = keyframes `
-  100%{
-    opacity: 1;
-    transform: scale(2);
-  }
-`
+// const kf = keyframes `
+//   100%{
+//     opacity: 1;
+//     transform: scale(2);
+//   }
+// `
 
 const StyledFind = styled.div`
   display:flex;
