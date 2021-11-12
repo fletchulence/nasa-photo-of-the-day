@@ -44,12 +44,7 @@ button{
        color:  ${pr => pr.theme.white}
     }
 }
-
 `
-
-
-
-// const Stye
 
 function Article(props) {
     const { img, title, onClick } = props;

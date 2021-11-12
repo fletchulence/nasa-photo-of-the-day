@@ -6,9 +6,7 @@ const Explanation = (props) => {
 
     return(
         <div> 
-            <h4>Explanation STARTS here </h4>
                <p> {explanation} </p>
-            <h4>Explanation ENDS here </h4>
         </div>
     );
 };

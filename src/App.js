@@ -24,7 +24,7 @@ function App() {
     function getData() {
       axios.get(`${BASE_URL}?api_key=${API_KEY}`)
       .then(res => {
-        console.log(res.data)
+        // console.log(res.data)
         setData(res.data)
       })
       .catch(err => {
@@ -38,9 +38,10 @@ function App() {
     evt.preventDefault()
     axios.get(`${BASE_URL}?api_key=${API_KEY}&date=${date}`)
     .then(res => {
-      console.log(res)
+      // console.log(res)
      setData(res.data)
      setDate(newDate) 
+     setShow(false)
     })
     .catch(err => {
       console.error(err)
@@ -70,16 +71,16 @@ function App() {
 
 export default App;
 
-{/* {
-  data &&
-<>
+// {/* {
+//   data &&
+// <>
 
-<div>
-  <p>{data.date}</p>
-  <div className='imgContainer'>
-    <img src={data.url} href='${data.url}'/>
-    <h1> {data.title} </h1>
-  </div>
-</div>
-</>
-} */}
+// <div>
+//   <p>{data.date}</p>
+//   <div className='imgContainer'>
+//     <img src={data.url} href='${data.url}'/>
+//     <h1> {data.title} </h1>
+//   </div>
+// </div>
+// </>
+// } */}

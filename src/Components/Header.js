@@ -10,6 +10,13 @@ const kf = keyframes `
   }
 `
 
+const StyledFind = styled.div`
+  display:flex;
+  flex-flow: column wrap;
+  margin: 3%;
+  justify-content: center;
+`
+
 const StyledHeader = styled.div`
   .container{
     display: flex;
@@ -17,7 +24,7 @@ const StyledHeader = styled.div`
     justify-content: space-between;
     margin: 0;
 
-    h4{
+    h4 {
       color: red;
       font-size: 60pt;
       margin: 0;
@@ -28,6 +35,16 @@ const StyledHeader = styled.div`
     align-self: center;
   }
 
+  @media (max-width: 400px) {
+    .header{
+      flex-direction: column;
+      
+      h4 {
+        font-size: 30pt;
+      }
+    }
+    
+  }
 
 `
 
@@ -35,18 +52,17 @@ const StyledHeader = styled.div`
 const Header = (props) => {
     const { date, submit, change, data } = props;
 
-
-    // const [ dates, setDates ] = useState([])
-
     return(
       <StyledHeader>
         <div className='header container'> 
-            <h4>{/* Header STARTS here */} {data.date}</h4>
-        <form onSubmit={submit}>
-             <input className='calendar' onChange={change} type='date' max={date}/> 
-             <input type='submit' value='date find'/>
-        </form>
-            <h4>{/* Header ENDS here */}</h4>
+          <h4>{data.date}</h4>
+          <StyledFind>
+            <p> Try searching another date: </p>
+            <form onSubmit={submit}>
+              <input className='calendar' onChange={change} type='date' max={date}/> 
+              <input type='submit' value='Find'/>
+            </form>
+          </StyledFind>
         </div>
       </StyledHeader>
     );
